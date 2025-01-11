@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Online Fitness Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="cheader">
+        <style>
+            .cheader{
+                background-image: url(/public/images/contact_us_2.png);
+            }
+        </style>
+        <div class="text-box2">
+            <h1><a href="miniprojectA8.html">Healthy You</a></h1>
+        </div>
+        <nav2>
+            <div class="nav-links2" id="navLinks2">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><b><a href="/public/images/index.html">HOME</a></b></li>
+                    <li><b><a href="about.html">ABOUT</a></b></li>
+                    <li><b><a href="contact.html">CONTACT</a></b></li>
+                </ul>
+            </div>
+            <br><i class="fa fa-bars" onclick="showmenu()"></i>
+        </nav2>
+    </section>
+
+    <div class="contactus">
+        <h3>CONTACT US</h3>
+        <br><br>  
+        <form action="/contact" method="post" class="myform">
+            <label for="fname">First Name</label>
+            <br>
+            <input type="text" name="firstname" placeholder="Your name.." value="">
+            <br>
+
+            <label for="lname">Last Name</label>
+            <br>
+            <input type="text" name="lastname" placeholder="Your last name.." value="">
+            <br>
+
+            <lable for="Email">Your Email</lable>
+            <br>
+            <input type="text" name="email" placeholder="Your email.." value="">  
+            <br>
+
+            <label for="subject"></label>
+            <br>
+            <div class="subject">
+                <textarea id="subject" name="subject" placeholder="Write Your Feedback Here......" style="height:200px" value="subject"></textarea>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var navLinks2 = document.getElementById("navLinks2");
+        
+        function showmenu(){
+            navLinks2.style.right="0";
+        }
+        
+        function hidemenu(){
+            navLinks2.style.right="-200px";
+        }
+    </script>
+    function fetchData() {
+        fetch('http://localhost:3000/contact')
+            .then(response => response.json())
+            .then(data => {
+                // Display data on the HTML page
+                const dataDiv = document.getElementById('data');
+                dataDiv.innerHTML = '';
+                data.forEach(row => {
+                    // Modify this as per your data structure
+                    dataDiv.innerHTML += `<p>${JSON.stringify(row)}</p>`;
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    }
+    
+</body>  
+</html>

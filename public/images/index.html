@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devide-width, initial-scale=1">
+        <meta http-equiv="X-UA-Complatible" content="ie=edge">
+        <title>Online Fitness Guide</title>
+	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    </head>
+
+<body>
+
+	<section class="header">
+        <style>
+            .header{
+                background-image: url(/public/images/background1.png);
+            }
+   
+        </style>
+	<div class="text-box">
+		<h1><a href="">FITNESS HUB</a></h1>
+	</div>
+	 <nav>
+		
+		<div class="nav-links" id="navLinks">
+		 <i class="fa fa-times" onclick="hidemenu()"></i>
+		<ul>
+           
+			<li><a href="miniprojectA8.html">HOME</a></li>
+			<li><a href="about.html">ABOUT</a></li>
+			<li><a href="/public/images/contact.html">CONTACT</a></li>
+           <li><br><font color="#FF1B1F"size="7"><a href="ourgym.html">TFC</a></li></ul><br></font>
+           
+		</ul>
+		</div>
+         <br><i class="fa fa-bars" onclick="showmenu()"></i>
+	 </nav>
+        
+        <div class="quote">
+            <h1>You are never <br>too old to set <br>another goal </h1>
+        </div>
+        
+	</section>
+    <!----------about us------>
+    <section>
+        <div class="aboutus">
+          
+        </div>
+    </section>
+    
+    <!-----------user infrmation------>
+    
+    <section class="userinfo">
+        <h1>USER INFORMATION</h1>
+        <div class="getinfo">
+            <form name="techBMI">
+            <h3>BMI Calculator</h3>
+            <br/>
+            <input type="text" name="height" placeholder="Enter Height (Cm)" size="20"><br /><br/>
+            <input type="text" name="weight" placeholder="Enter Weight (kg)" size="20"><br /><br/>
+            <input class="decoration-one px-3 py-2" type="button" value="Calculate BMI" onClick="calculateBmi()"><br /><br/>
+            <input type="text" name="bmi" placeholder="Your BMI Will be here" size="20"><br /><br/>
+            <input type="text" name="meaning" size="50"><br /><br/>
+            <input class="decoration-one px-3 py-2" type="reset" value="Reset" />
+            <br/>
+            </form>
+         </div>
+    </section>
+
+    <script>  
+            function calculateBmi() {
+            var weight = document.techBMI.weight.value
+            var height = document.techBMI.height.value
+            if(weight > 0 && height > 0){	
+            var finalBmi = (weight/(height*height))*10000
+            document.techBMI.bmi.value = finalBmi.toFixed(3);
+            if(finalBmi < 18.5){
+            document.techBMI.meaning.value = "You are unhealthy, too thin. You need to gain some weight"
+                }
+            if(finalBmi > 18.5 && finalBmi < 25){
+            document.techBMI.meaning.value = "You are healthy enough."
+                }
+            if(finalBmi > 25 &&  finalBmi <30){
+            document.techBMI.meaning.value = "You have overweight. You need to loose some weight"
+                }
+            if(finalBmi > 30){
+            document.techBMI.meaning.value = "Your condition is serious."
+                }
+                }
+                else{
+                alert("Data you've entered might be incorrect. Please check and try again.")
+                }
+
+                }
+        
+    </script>     
+       
+    
+    <!-----course------>
+    
+    <section class="course">
+        
+        <h1>COURSES ACCORDING TO AGE</h1>
+        
+        <div class="row">
+            <div class="course-col">
+                <a href="below18.html"><image src="/public/images/kids.png"> </image></a>
+                    <a href="below18.html"> <h3>BELOW 18</h3>
+                     <hr>
+                        <p>PEPOLE BETWEEN THE AGE 10 TO 18</p></a>
+            </div>
+         
+            <div class="course-col">
+                <a href="above18.html"><image src="/public/images/weightgain1.png"></image></a>
+                  <a href="above18.html">  <h3>ABOVE 18</h3>
+                    <hr>
+                      <p>PEPOLE BETWEEN THE AGE 19 TO 40</p> </a>     
+             </div>
+              
+            <div class="course-col">
+                <a href="above40.html"> <image src="/public/images/senior-exercise.png"></image></a>
+                   <a href="above40.html"> <h3>ABOVE 40</h3>
+                    <hr>
+                       <p>PEOPLE BETWEEN THE AGE 40 TO ABOVE</p></a>
+             </div>
+        </div>          
+    </section>
+    
+   <!------javascript toogle menu---->
+<script>
+    var navLinkS = document.getEelementById("navLinks");
+    
+    function showmenu(){
+        navLinks.style.right="0";
+    }
+    
+    function hidemenu(){
+        navLinks.style.right="-200px";
+    }
+</script>
+    
+    <section class="button">
+        <div class="col6">
+                <a class="col7" href="contact.html">Feedback</a>
+        </div>
+    </section>
+    
+    
+</body>
+
+    
+    <!-----footer------------->
+    
+    <footer class="footer1">
+        
+            <h3>FITNESS ● HEALTH ● DIET</h3>
+            <h6>©Healthy You | All rights reserved</h6>
+        
+    
+    </footer>
+
+    </body>
+</html>
+

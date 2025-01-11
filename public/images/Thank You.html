@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 100px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .thank-you-message {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #009900;
+    }
+
+    /* Additional CSS styles as needed */
+  </style>
+</head>
+<body>
+    <nav>
+		
+		<div class="nav-links" id="navLinks">
+		 <i class="fa fa-times" onclick="hidemenu()"></i>
+		<ul>
+           
+			<li><a href="miniprojectA8.html">HOME</a></li>
+			<li><a href="about.html">ABOUT</a></li>
+			<li><a href="contact.html">CONTACT</a></li>
+		</ul>
+		</div>
+         <br><i class="fa fa-bars" onclick="showmenu()"></i>
+	 </nav>
+     
+     <script>
+        var navLinkS = document.getEelementById("navLinks");
+        
+        function showmenu(){
+            navLinks.style.right="0";
+        }
+        
+        function hidemenu(){
+            navLinks.style.right="-200px";
+        }
+    </script>
+  <div class="container">
+    <h1>Thank You!</h1>
+    <p>Your message has been successfully submitted.</p>
+    <p class="thank-you-message">We appreciate your feedback.</p>
+    <!-- Additional content or code if needed -->
+  </div>
+</body>
+</html>
